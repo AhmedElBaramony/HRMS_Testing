@@ -3,13 +3,20 @@ package org.example;
 public class Employee {
     private String name;
     private int id;
-    private double salary;
+    private String username;
+    private String password;
+    private String department;
+    private Payroll salary;
+    private PerformanceEvaluation performanceEvaluation;
 
-
-    public Employee(String name, int id, double salary) {
+    public Employee(String name, int id, String username, String password, String department) {
         this.name = name;
         this.id = id;
-        this.salary = salary;
+        this.username = username;
+        this.password = password;
+        this.department = department;
+        this.salary = null;
+        this.performanceEvaluation = null;
     }
 
     public void setName(String name) {
@@ -20,8 +27,24 @@ public class Employee {
         this.id = id;
     }
 
-    public void setSalary(double salary) {
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public void setSalary(Payroll salary) {
         this.salary = salary;
+    }
+
+    public void setPerformanceEvaluation(PerformanceEvaluation performanceEvaluation) {
+        this.performanceEvaluation = performanceEvaluation;
     }
 
     public String getName() {
@@ -32,8 +55,24 @@ public class Employee {
         return id;
     }
 
-    public double getSalary() {
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public Payroll getSalary() {
         return salary;
+    }
+
+    public PerformanceEvaluation getPerformanceEvaluation() {
+        return performanceEvaluation;
     }
 }
 

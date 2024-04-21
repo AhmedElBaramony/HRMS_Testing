@@ -81,7 +81,7 @@ public class Payroll {
     }
 
     public double calculateSalary(){
-        double salary = this.baseSalary - (bonus * (this.baseSalary/100));
+        double salary = this.baseSalary - (this.deduction * (this.baseSalary/100));
         salary -= tax * (salary/100);
         salary += this.bonus;
         return salary;

@@ -1,6 +1,8 @@
 package org.example;
 
 import static  org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
@@ -12,6 +14,11 @@ public class LeaveRequestTest {
     private Employee employee;
     private Date startDate;
     private Date endDate;
+
+    @BeforeAll
+    static void beforeall(){
+        System.out.println("Testing The Leave Request ");
+    }
 
     @BeforeEach
     void setUp() {

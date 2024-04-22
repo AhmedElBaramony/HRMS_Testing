@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 
 import org.example.Employee;
 import org.example.HRMS;
+import org.example.Sys;
 
 public class LoginPage extends JFrame {
 
@@ -14,12 +15,15 @@ public class LoginPage extends JFrame {
     private JLabel PasswordLabel;
     private JPanel MainWin;
     private JPasswordField PasswordText;
+    private JPanel TitlePanel;
+    private JPanel BtnPanel;
+    private JPanel InnputPanel;
 
     public int status;
 
     public LoginPage() {
 
-        HRMS hrms = new HRMS();
+
 
         // Make the window visible
         setVisible(true);
@@ -35,11 +39,13 @@ public class LoginPage extends JFrame {
                 char[] passch = PasswordText.getPassword();
                 String password = new String(passch);
 
-                status = hrms.authenticate(username,password);
+                status = Sys.hrms.authenticate(username,password);
+
+                Sys.status = status;
 
                 if (status >= 0) {
 
-                    Employee employee = hrms.getEmployee(status);
+                    Employee employee = Sys.hrms.getEmployee(status);
                     EmployeeLand employeepage = new EmployeeLand();
                     dispose();
 
@@ -49,7 +55,7 @@ public class LoginPage extends JFrame {
                 }
                 else {
 
-                    JOptionPane.showMessageDialog(LoginPage.this, "Status = " + status);
+                    JOptionPane.showMessageDialog(LoginPage.this, "Admin Logged");
                 }
                 // Do something with the input text (e.g., display it)
 

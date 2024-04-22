@@ -30,7 +30,7 @@ class LeaveManagementTest {
     }
     @Test
     @Order(1)
-    @DisplayName("Add and Get leave Request")
+    @DisplayName("Get leave Request")
 
     public void testAddRequestAndGetLeaveRequest() {
         assertEquals(leaveRequest, leaveManagement.getLeaveRequest(0));
@@ -38,11 +38,10 @@ class LeaveManagementTest {
 
     @Test
     @Order(2)
-    @DisplayName("Search leave Request")
+    @DisplayName("Search leave Request Found and Not Found")
     void searchRequest() {
-        int x = -1;
         assertEquals(0, leaveManagement.searchRequest(1));
-        assertTrue(x == leaveManagement.searchRequest(2)); // Non-existent ID
+        assertTrue(-1 == leaveManagement.searchRequest(2)); // Non-existent ID
     }
 
     @Test

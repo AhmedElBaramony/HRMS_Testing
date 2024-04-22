@@ -63,6 +63,7 @@ public class LeaveRequestTest {
         assertEquals(newEndDate, leaveRequest.getEnd_date());
     }
 
+    // To test that the values in the ENUMS are assigned correctly
     @Test
     @DisplayName("Test Enums Getters/Setters")
     void Setters_And_Getters_For_ENUMS() {

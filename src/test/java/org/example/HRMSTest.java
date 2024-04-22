@@ -30,6 +30,8 @@ class HRMSTest {
         leaveManagement = new LeaveManagement();
         leaveManagement.addRequest(testLeaveRequest);
     }
+    // In the first three functions we made integration testing between Employee and HRMS
+    // IN the rest we test the integration between HRMS and the LeaveManagement and The LeaveRequest
 
     @Test
     @Order(1)
@@ -43,7 +45,6 @@ class HRMSTest {
     @Order(2)
     @DisplayName("Test Search Employee")
     void testSearchEmployee() {
-        // Here We apply integration testing between HRMS and Employee
         hrms.addEmployee(testEmployee);
         // The expected is location 1 Because in 0 there is already an Employee
         assertEquals(1, hrms.searchEmployee(testEmployee.getId()));
@@ -51,21 +52,20 @@ class HRMSTest {
 
     @Test
     @Order(3)
+    @DisplayName("Test Remove Employee")
+    void testRemoveEmployee() {
+        hrms.addEmployee(testEmployee);
+        hrms.removeEmployee(hrms.searchEmployee(testEmployee.getId()));
+        assertEquals(-1 , hrms.searchEmployee(testEmployee.getId()));
+    }
+
+    @Test
+    @Order(4)
     @DisplayName("Test Add and Get Leave request")
     // Here We apply integration testing between HRMS and LeaveRequest
     void testAddRequestAndGetLeaveRequest() {
         hrms.addRequest(testLeaveRequest);
         assertEquals(testLeaveRequest, hrms.getLeaveRequest(0));
-    }
-
-    @Test
-    @Order(4)
-    @DisplayName("Test Remove Employee")
-        // Here We apply integration testing between HRMS and Employee
-    void testRemoveEmployee() {
-        hrms.addEmployee(testEmployee);
-        hrms.removeEmployee(hrms.searchEmployee(testEmployee.getId()));
-        assertEquals(-1 , hrms.searchEmployee(testEmployee.getId()));
     }
     @Test
     @DisplayName("Search Request: Request Exists")

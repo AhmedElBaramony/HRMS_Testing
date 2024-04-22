@@ -9,6 +9,9 @@ public class HRMS{
     public HRMS() {
         this.employees = new ArrayList<Employee>();
         this.leaveManagement = new LeaveManagement();
+
+        Employee emp1 = new Employee("Ahmed",1,"ahmedbaramony","21P0261", "baramony@gmail.com");
+        employees.add(emp1);
     }
 
     public Employee getEmployee(int index){
@@ -56,13 +59,15 @@ public class HRMS{
 
     public int authenticate(String username, String password){
         int state = -2; //not an admin nor employee
+
         if(username.equals("admin") && password.equals("admin")){
             state = -1; //admin
         }
-        else{
-            for (int i=0;i<employees.size();i++) {
-                if (username.equals(employees.get(i).getUsername()) &&
-                        password.equals(employees.get(i).getPassword())) {
+        else
+        {
+            for (int i=0;i<employees.size();i++)
+            {
+                if (username.equals(employees.get(i).getUsername()) && password.equals(employees.get(i).getPassword())) {
                     state = i; //employee
                     break;
                 }

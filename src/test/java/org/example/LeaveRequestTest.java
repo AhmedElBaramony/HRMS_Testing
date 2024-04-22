@@ -1,13 +1,13 @@
 package org.example;
 
-import static  org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import java.util.Date;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LeaveRequestTest {
     private LeaveRequest leaveRequest;
@@ -22,7 +22,7 @@ public class LeaveRequestTest {
 
     @BeforeEach
     void setUp() {
-        employee = new Employee("Hesham Mohamed",1,"heshamelafandi","21P0054", "hesham@gmail.com");
+        employee = new Employee("Hesham Mohamed",3,"heshamelafandi","21P0054", "hesham@gmail.com");
         startDate = new Date(2024,5,25);
         endDate = new Date(2024,6,24);
         leaveRequest = new LeaveRequest(1, employee, startDate, endDate, LeaveStatus.PENDING, LeaveType.HOLIDAY);

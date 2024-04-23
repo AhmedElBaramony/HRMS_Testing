@@ -6,6 +6,9 @@ import org.junit.runners.Suite;
         HRMSTest.class,
         LeaveManagementTest.class,
         LeaveRequestTest.class,
+        Employee.class,
+        PayrollTest.class,
+        PerformanceEvaluationTest.class
 })
 public class TestSuite {
 }

@@ -17,29 +17,35 @@ public class AdminPage extends JFrame implements ActionListener {
         setTitle("Admin Page");
         setSize(500,500);
         setVisible(true);
-
+        // Close operation
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         EmployeeServicesBtn.addActionListener(this);
         LeaveReqBtn.addActionListener(this);
         LoginPageBtn.addActionListener(this);
 
-        // Close operation
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == EmployeeServicesBtn) {
-
+            new EmployeeServicesPage();
+            dispose();
         }
         else if(e.getSource() == LeaveReqBtn){
-
+            new LeaveRequestManagementPage();
+            dispose();
         }
         else
         {
             new LoginPage();
             dispose();
         }
+    }
+
+    public static void main(String []args){
+        new AdminPage();
     }
 }

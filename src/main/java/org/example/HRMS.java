@@ -10,7 +10,7 @@ public class HRMS{
         this.employees = new ArrayList<Employee>();
         this.leaveManagement = new LeaveManagement();
 
-        Employee emp1 = new Employee("Ahmed",1,"ahmedbaramony","21P0261", "baramony@gmail.com");
+        Employee emp1 = new Employee("Ahmed",1,"ahmed","ahmed", "baramony@gmail.com");
         employees.add(emp1);
     }
 

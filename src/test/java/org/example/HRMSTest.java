@@ -6,7 +6,9 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class HRMSTest {
+public class HRMSTest {
+    public HRMSTest() {
+    }
 
     private HRMS hrms;
     private Employee testEmployee;
@@ -37,15 +39,15 @@ class HRMSTest {
     @Test
     @Order(1)
     @DisplayName("Test Add and Get Employee")
-    void testAddEmployeeAndGetEmployee() {
+    public void testAddEmployeeAndGetEmployee() {
         hrms.addEmployee(testEmployee);
         assertEquals(testEmployee.getId(), hrms.getEmployee(hrms.searchEmployee(testEmployee.getId())).getId());
     }
 
     @Test
     @Order(2)
-    @DisplayName("Test Search Employee")
-    void testSearchEmployee() {
+    @DisplayName("Test Search Employee Found")
+    public void testSearchEmployeeFound() {
         hrms.addEmployee(testEmployee);
         // The expected is location 1 Because in 0 there is already an Employee
         assertEquals(1, hrms.searchEmployee(testEmployee.getId()));
@@ -53,25 +55,33 @@ class HRMSTest {
 
     @Test
     @Order(3)
+    @DisplayName("Test Search Employee Not Found")
+    public void testSearchEmployeeNotFound() {
+        // WE DIDN'T ADD THE EMPLOYEE THIS TIME
+        assertEquals(-1, hrms.searchEmployee(testEmployee.getId()));
+    }
+
+    @Test
+    @Order(4)
     @DisplayName("Test Remove Employee")
-    void testRemoveEmployee() {
+    public void testRemoveEmployee() {
         hrms.addEmployee(testEmployee);
         hrms.removeEmployee(hrms.searchEmployee(testEmployee.getId()));
         assertEquals(-1 , hrms.searchEmployee(testEmployee.getId()));
     }
 
     @Test
-    @Order(4)
+    @Order(5)
     @DisplayName("Test Add and Get Leave request")
     // Here We apply integration testing between HRMS and LeaveRequest
-    void testAddRequestAndGetLeaveRequest() {
+    public void testAddRequestAndGetLeaveRequest() {
         hrms.addRequest(testLeaveRequest);
         assertEquals(testLeaveRequest, hrms.getLeaveRequest(0));
     }
     @Test
     @DisplayName("Search Request: Request Exists")
-    @Order(5)
-    void testSearchRequestWhenRequestExists() {
+    @Order(6)
+    public void testSearchRequestWhenRequestExists() {
         hrms.addRequest(testLeaveRequest);
         int index = hrms.searchRequest(testLeaveRequest.getLeave_Id());
         assertEquals(0, index, "Search request should return the index of the request");
@@ -79,16 +89,16 @@ class HRMSTest {
 
     @Test
     @DisplayName("Search Request: Request Does Not Exist")
-    @Order(6)
-    void testSearchRequestWhenRequestDoesNotExist() {
+    @Order(7)
+    public void testSearchRequestWhenRequestDoesNotExist() {
         int index = hrms.searchRequest(15);
         assertEquals(-1, index);
     }
 
     @Test
     @DisplayName("Accept Leave Request")
-    @Order(7)
-    void testAcceptLeaveRequest() {
+    @Order(8)
+    public void testAcceptLeaveRequest() {
         hrms.addRequest(testLeaveRequest);
         hrms.acceptLeaveRequest(0);
         assertEquals(LeaveStatus.ACCEPTED, testLeaveRequest.getStatus());
@@ -96,30 +106,30 @@ class HRMSTest {
 
     @Test
     @DisplayName("Reject Leave Request")
-    @Order(8)
-    void testRejectLeaveRequest() {
+    @Order(9)
+    public void testRejectLeaveRequest() {
         hrms.addRequest(testLeaveRequest);
         hrms.rejectLeaveRequest(0);
         assertEquals(LeaveStatus.REJECTED, testLeaveRequest.getStatus());
     }
     @Test
-    @Order(9)
+    @Order(10)
     @DisplayName("Test authentication for admin user")
-    void testAdminAuthentication() {
+    public void testAdminAuthentication() {
         assertEquals(-1, hrms.authenticate("admin", "admin"));
     }
 
     @Test
-    @Order(10)
+    @Order(11)
     @DisplayName("Test authentication for valid employee user")
-    void testValidEmployeeAuthentication() {
+    public void testValidEmployeeAuthentication() {
          assertEquals(0, hrms.authenticate("ahmedbaramony", "21P0261"));
     }
 
     @Test
-    @Order(11)
+    @Order(12)
     @DisplayName("Test authentication for invalid user")
-    void testInvalidAuthentication() {
-         assertEquals(-2, hrms.authenticate("invalidUser", "invalidPassword"));
+    public void testInvalidAuthentication() {
+        assertEquals(-2, hrms.authenticate("invalidUser", "invalidPassword"));
     }
 }

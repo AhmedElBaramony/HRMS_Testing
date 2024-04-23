@@ -6,7 +6,9 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class LeaveManagementTest {
+public class LeaveManagementTest {
+    public LeaveManagementTest() {
+    }
 
     private LeaveRequest leaveRequest;
     private Employee employee;
@@ -31,31 +33,36 @@ class LeaveManagementTest {
     @Test
     @Order(1)
     @DisplayName("Get leave Request")
-
     public void testAddRequestAndGetLeaveRequest() {
         assertEquals(leaveRequest, leaveManagement.getLeaveRequest(0));
     }
 
     @Test
     @Order(2)
-    @DisplayName("Search leave Request Found and Not Found")
-    void searchRequest() {
+    @DisplayName("Search leave Request Found")
+    public void searchRequestFound() {
         assertEquals(0, leaveManagement.searchRequest(1));
-        assertTrue(-1 == leaveManagement.searchRequest(2)); // Non-existent ID
     }
 
     @Test
     @Order(3)
+    @DisplayName("Search leave Request Not Found")
+    public void searchRequestNotFound() {
+        assertTrue(-1 == leaveManagement.searchRequest(2)); // Non-existent ID
+    }
+
+    @Test
+    @Order(4)
     @DisplayName("Accept leave Request")
-    void acceptLeaveRequest() {
+    public void acceptLeaveRequest() {
         leaveManagement.acceptLeaveRequest(0);
         assertEquals(LeaveStatus.ACCEPTED, leaveManagement.getLeaveRequest(0).getStatus());
     }
 
     @Test
-    @Order(4)
+    @Order(5)
     @DisplayName("Reject leave Request")
-    void rejectLeaveRequest() {
+    public void rejectLeaveRequest() {
         leaveManagement.rejectLeaveRequest(0);
         assertEquals(LeaveStatus.REJECTED, leaveManagement.getLeaveRequest(0).getStatus());
     }

@@ -18,8 +18,17 @@ public class HRMS{
         return employees.get(index);
     }
 
-    public void addEmployee(Employee employee){
-        employees.add(employee);
+    public boolean addEmployee(Employee employee){
+
+        if(searchEmployee(employee.getId()) == -1)
+        {
+            employees.add(employee);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public int searchEmployee(int id){

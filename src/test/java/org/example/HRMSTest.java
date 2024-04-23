@@ -31,7 +31,8 @@ class HRMSTest {
         leaveManagement.addRequest(testLeaveRequest);
     }
     // In the first three functions we made integration testing between Employee and HRMS
-    // IN the rest we test the integration between HRMS and the LeaveManagement and The LeaveRequest
+    // In the rest we test the integration between HRMS and (the LeaveManagement, The LeaveRequest)
+    // The last three functions are for testing all Authentication possibilities
 
     @Test
     @Order(1)
@@ -101,15 +102,24 @@ class HRMSTest {
         hrms.rejectLeaveRequest(0);
         assertEquals(LeaveStatus.REJECTED, testLeaveRequest.getStatus());
     }
- /*
     @Test
     @Order(9)
-    @DisplayName("Test Authentication")
-    void testAuthenticate() {
-        hrms.addEmployee(testEmployee);
-        int employeeIndex = hrms.authenticate(testEmployee.getUsername(), testEmployee.getPassword());
-        assertEquals(0, employeeIndex);
+    @DisplayName("Test authentication for admin user")
+    void testAdminAuthentication() {
+        assertEquals(-1, hrms.authenticate("admin", "admin"));
     }
 
- */
+    @Test
+    @Order(10)
+    @DisplayName("Test authentication for valid employee user")
+    void testValidEmployeeAuthentication() {
+         assertEquals(0, hrms.authenticate("ahmedbaramony", "21P0261"));
+    }
+
+    @Test
+    @Order(11)
+    @DisplayName("Test authentication for invalid user")
+    void testInvalidAuthentication() {
+         assertEquals(-2, hrms.authenticate("invalidUser", "invalidPassword"));
+    }
 }

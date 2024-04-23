@@ -63,11 +63,11 @@ public class PerformanceEvaluation {
 
         Evaluation evaluation;
 
-        if (eval < 1.5) {
+        if (eval < 0.8) {
             evaluation = Evaluation.POOR;
-        } else if (eval < 2.5) {
+        } else if (eval < 1.7) {
             evaluation = Evaluation.FAIR;
-        } else if (eval < 3.5) {
+        } else if (eval < 2.6) {
             evaluation = Evaluation.GOOD;
         } else {
             evaluation = Evaluation.EXCELLENT;

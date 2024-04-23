@@ -1,11 +1,11 @@
 package org.example;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PerformanceEvaluationTest {
     private PerformanceEvaluation performanceEvaluation;
@@ -69,13 +69,32 @@ public class PerformanceEvaluationTest {
     @Test
     @DisplayName("Test Evaluation Calculation")
     void testGetEvaluation() {
-        assertEquals(Evaluation.GOOD, performanceEvaluation.getEvaluation());
+
+        // EXCELLENT
+        assertEquals(Evaluation.EXCELLENT, performanceEvaluation.getEvaluation());
+
+        //FAIR
         performanceEvaluation.setQuality(Evaluation.GOOD);
         performanceEvaluation.setProductivity(Evaluation.GOOD);
         performanceEvaluation.setPunctuality(Evaluation.FAIR);
         performanceEvaluation.setCollaboration(Evaluation.GOOD);
         performanceEvaluation.setInitiative(Evaluation.FAIR);
-
         assertEquals(Evaluation.FAIR, performanceEvaluation.getEvaluation());
+
+        //POOR
+        performanceEvaluation.setQuality(Evaluation.POOR);
+        performanceEvaluation.setProductivity(Evaluation.POOR);
+        performanceEvaluation.setPunctuality(Evaluation.FAIR);
+        performanceEvaluation.setCollaboration(Evaluation.POOR);
+        performanceEvaluation.setInitiative(Evaluation.FAIR);
+        assertEquals(Evaluation.POOR, performanceEvaluation.getEvaluation());
+
+        //GOOD
+        performanceEvaluation.setQuality(Evaluation.EXCELLENT);
+        performanceEvaluation.setProductivity(Evaluation.GOOD);
+        performanceEvaluation.setPunctuality(Evaluation.GOOD);
+        performanceEvaluation.setCollaboration(Evaluation.GOOD);
+        performanceEvaluation.setInitiative(Evaluation.EXCELLENT);
+        assertEquals(Evaluation.GOOD, performanceEvaluation.getEvaluation());
     }
 }

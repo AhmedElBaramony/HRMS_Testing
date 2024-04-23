@@ -1,15 +1,17 @@
 package org.example;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.DisplayName;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PayrollTest {
 
     private Payroll payroll;
+    Payroll payroll1 = new Payroll(50000, 5000, 10, 5);
+    Payroll payroll2 = new Payroll(50000, 5000, 0, 5);
+    Payroll payroll3 = new Payroll(50000, 5000, 80, 0);
 
     @BeforeAll
     static void beforeAll() {
@@ -51,8 +53,8 @@ public class PayrollTest {
     }
 
     @Test
-    @DisplayName("Test Setters and Getters")
-    void testSettersAndGetters() {
+    @DisplayName("Test Setters and Getters Correct")
+    void testSettersAndGettersCorrect() {
         payroll.setBaseSalary(60000);
         assertEquals(60000, payroll.getBaseSalary());
 
@@ -67,30 +69,43 @@ public class PayrollTest {
     }
 
     @Test
-    @DisplayName("Test Calculate Salary")
-    void testCalculateSalary() {
-        assertEquals(47750, payroll.calculateSalary());
+    @DisplayName("Test Setters and Getters Incorrect")
+    void testSettersAndGettersIncorrect() {
+        payroll.setBaseSalary(-500);
+        assertEquals(0, payroll.getBaseSalary());
+
+        payroll.setBonus(-73737);
+        assertEquals(0, payroll.getBonus());
+
+        payroll.setTax(-5);
+        assertEquals(0, payroll.getTax());
+
+        payroll.setTax(150);
+        assertEquals(100, payroll.getTax());
+
+        payroll.setDeduction(-5);
+        assertEquals(0, payroll.getDeduction());
+
+        payroll.setDeduction(150);
+        assertEquals(100, payroll.getDeduction());
     }
 
-    @Test
+
+    // Parameterized test example
+    @ParameterizedTest
+    @ValueSource(strings = {"payroll1", "payroll2", "payroll3"})
+    void testCalculateSalaryWithParameter(String input) {
+        // Perform test with parameter input
+        if (input.equals("payroll1"))   assertEquals(47750, payroll1.calculateSalary());
+        if (input.equals("payroll2"))   assertEquals(52500, payroll2.calculateSalary());
+        if (input.equals("payroll3"))   assertEquals(15000, payroll3.calculateSalary());
+    }
+
+    @RepeatedTest(2)
     @DisplayName("Test Calculate Salary with Zero Tax")
     void testCalculateSalaryWithZeroTax() {
         payroll.setTax(0);
         assertEquals(52500, payroll.calculateSalary());
     }
 
-    @Test
-    @DisplayName("Test Calculate Salary with Zero Deduction")
-    void testCalculateSalaryWithZeroDeduction() {
-        payroll.setDeduction(0);
-        assertEquals(50000, payroll.calculateSalary());
-    }
-
-    @Test
-    @DisplayName("Test Calculate Salary with Negative Values")
-    void testCalculateSalaryWithNegativeValues() {
-        payroll.setBaseSalary(-50000);
-        payroll.setBonus(-5000);
-        assertEquals(0, payroll.calculateSalary());
-    }
 }

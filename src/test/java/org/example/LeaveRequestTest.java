@@ -17,7 +17,7 @@ public class LeaveRequestTest {
 
     @BeforeAll
     static void beforeall(){
-        System.out.println("Testing The Leave Request ");
+        System.out.println("Testing The Leave Request Class ");
     }
 
     @BeforeEach

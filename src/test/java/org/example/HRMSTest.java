@@ -19,7 +19,7 @@ public class HRMSTest {
 
     @BeforeAll
     static void beforeall(){
-        System.out.println("Testing The HRMS system ");
+        System.out.println("Testing The HRMS system Class ");
     }
 
     @BeforeEach
@@ -32,9 +32,8 @@ public class HRMSTest {
         leaveManagement = new LeaveManagement();
         leaveManagement.addRequest(testLeaveRequest);
     }
-    // In the first three functions we made integration testing between Employee and HRMS
-    // In the rest we test the integration between HRMS and (the LeaveManagement, The LeaveRequest)
-    // The last three functions are for testing all Authentication possibilities
+    // Integration Testing with LeaveManagement Class  in tests from 5-9
+    // The rest is Unit testing
 
     @Test
     @Order(1)
@@ -123,13 +122,17 @@ public class HRMSTest {
     @Order(11)
     @DisplayName("Test authentication for valid employee user")
     public void testValidEmployeeAuthentication() {
-         assertEquals(0, hrms.authenticate("ahmedbaramony", "21P0261"));
+        hrms.addEmployee(testEmployee);
+         assertEquals(hrms.searchEmployee(testEmployee.getId()),
+                 hrms.authenticate(hrms.getEmployee(hrms.searchEmployee(testEmployee.getId())).getUsername(),
+                 hrms.getEmployee(hrms.searchEmployee(testEmployee.getId())).getPassword()));
     }
 
     @Test
     @Order(12)
     @DisplayName("Test authentication for invalid user")
     public void testInvalidAuthentication() {
-        assertEquals(-2, hrms.authenticate("invalidUser", "invalidPassword"));
+        assertEquals(-2,
+                hrms.authenticate("invalidUser", "invalidPassword"));
     }
 }

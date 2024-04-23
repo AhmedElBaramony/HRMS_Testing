@@ -18,7 +18,7 @@ public class LeaveManagementTest {
 
     @BeforeAll
     static void beforeall(){
-        System.out.println("Testing The Leave Management ");
+        System.out.println("Testing The Leave Management Class ");
     }
 
     @BeforeEach
@@ -30,6 +30,8 @@ public class LeaveManagementTest {
         leaveManagement = new LeaveManagement();
         leaveManagement.addRequest(leaveRequest);
     }
+    //  test case 4-5 are integration testing between LeaveManagement and LeaveStatus
+    //  The rest is Unit testing
     @Test
     @Order(1)
     @DisplayName("Get leave Request")

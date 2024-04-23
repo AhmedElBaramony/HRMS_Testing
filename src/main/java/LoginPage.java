@@ -2,8 +2,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import org.example.Employee;
-import org.example.HRMS;
 import org.example.Sys;
 
 public class LoginPage extends JFrame implements ActionListener{
@@ -50,7 +48,7 @@ public class LoginPage extends JFrame implements ActionListener{
 
             if (status >= 0) {
                 Sys.employee = Sys.hrms.getEmployee(status);
-                new EmployeeLand();
+                new EmployeePage();
                 dispose();
             }
             else if(status == -1){

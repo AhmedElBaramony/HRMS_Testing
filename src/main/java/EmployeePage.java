@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class EmployeeLand extends JFrame implements ActionListener {
+public class EmployeePage extends JFrame implements ActionListener {
     private JLabel EmployeeLandLabel;
     private JLabel NameLabel;
     private JLabel IDLabel;
@@ -23,7 +23,7 @@ public class EmployeeLand extends JFrame implements ActionListener {
     private JButton LoginPageBtn;
 
 
-    public EmployeeLand(){
+    public EmployeePage(){
         setContentPane(EmployeePage);
         setTitle("Employee Land Page");
         setSize(500,500);

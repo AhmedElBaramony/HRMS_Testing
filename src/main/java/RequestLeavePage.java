@@ -66,7 +66,6 @@ public class RequestLeavePage extends JFrame implements ActionListener {
 
                 Sys.hrms.addRequest(new LeaveRequest(id, Sys.employee, start, end, LeaveStatus.PENDING, leaveType));
                 JOptionPane.showMessageDialog(null,"Request added successfully!", "Info", JOptionPane.INFORMATION_MESSAGE);
-                System.out.println(Sys.hrms.getLeaveRequestsCount());
             }
             catch(Exception exp){
                 JOptionPane.showMessageDialog(null,"Only numbers are allowed!", "Error", JOptionPane.ERROR_MESSAGE);

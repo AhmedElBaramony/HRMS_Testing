@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class HRMS{
     private ArrayList<Employee> employees;
@@ -11,6 +12,14 @@ public class HRMS{
         this.leaveManagement = new LeaveManagement();
 
         Employee emp1 = new Employee("Ahmed",1,"ahmed","ahmed", "Engineering");
+        LeaveRequest leaveRequest = new LeaveRequest(0,emp1,new Date(1,1,1),new Date(1,1,1),LeaveStatus.PENDING,LeaveType.SICK_LEAVE);
+        leaveManagement.addRequest(leaveRequest);
+         leaveRequest = new LeaveRequest(0,emp1,new Date(1,1,1),new Date(1,1,1),LeaveStatus.PENDING,LeaveType.PARENTAL_LEAVE);
+        leaveManagement.addRequest(leaveRequest);
+         leaveRequest = new LeaveRequest(0,emp1,new Date(1,1,1),new Date(1,1,1),LeaveStatus.PENDING,LeaveType.EMERGENCY);
+        leaveManagement.addRequest(leaveRequest);
+         leaveRequest = new LeaveRequest(0,emp1,new Date(1,1,1),new Date(1,1,1),LeaveStatus.PENDING,LeaveType.HOLIDAY);
+        leaveManagement.addRequest(leaveRequest);
         employees.add(emp1);
     }
 

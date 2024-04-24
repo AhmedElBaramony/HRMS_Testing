@@ -1,3 +1,5 @@
+import org.example.Sys;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,10 +25,7 @@ public class AdminPage extends JFrame implements ActionListener {
         EmployeeServicesBtn.addActionListener(this);
         LeaveReqBtn.addActionListener(this);
         LoginPageBtn.addActionListener(this);
-
-
     }
-
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -35,6 +34,10 @@ public class AdminPage extends JFrame implements ActionListener {
             dispose();
         }
         else if(e.getSource() == LeaveReqBtn){
+            if(Sys.hrms.getLeaveRequestsCount() == 0){
+                JOptionPane.showMessageDialog(null,"No Leave Requests available!", "Info",JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
             new LeaveRequestManagementPage();
             dispose();
         }

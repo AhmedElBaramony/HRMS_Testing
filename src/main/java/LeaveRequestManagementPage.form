@@ -70,7 +70,7 @@
               <text value="&lt;"/>
             </properties>
           </component>
-          <grid id="dc52d" binding="EmployeeInfoPanel" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="dc52d" binding="EmployeeInfoPanel" layout-manager="GridLayoutManager" row-count="7" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -234,6 +234,32 @@
                   <font size="18" style="0"/>
                   <foreground color="-16777216"/>
                   <text value="Request Type"/>
+                </properties>
+              </component>
+              <component id="701b6" class="javax.swing.JLabel" binding="StatusLabel">
+                <constraints>
+                  <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="208" height="25"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-16777216"/>
+                  <enabled value="true"/>
+                  <font size="18" style="1"/>
+                  <foreground color="-16777216"/>
+                  <text value="Status:"/>
+                </properties>
+              </component>
+              <component id="9ff2e" class="javax.swing.JLabel" binding="RequestStatus">
+                <constraints>
+                  <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-16777216"/>
+                  <enabled value="true"/>
+                  <font size="18" style="0"/>
+                  <foreground color="-16777216"/>
+                  <text value="Request Status"/>
                 </properties>
               </component>
             </children>

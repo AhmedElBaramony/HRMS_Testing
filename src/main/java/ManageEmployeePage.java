@@ -36,8 +36,16 @@ public class ManageEmployeePage extends JFrame implements ActionListener {
         // Close operation
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        EmployeeInfoPanel.setVisible(false);
-        BtnPanel.setVisible(false);
+        if(Sys.employee == null){
+            EmployeeInfoPanel.setVisible(false);
+            BtnPanel.setVisible(false);
+        }
+        else{
+            IDText.setText(String.valueOf(Sys.employee.getId()));
+            EmployeeInfoPanel.setVisible(true);
+            BtnPanel.setVisible(true);
+        }
+
 
         SubmitBtn.addActionListener(this);
         SetPayrollBtn.addActionListener(this);
@@ -63,6 +71,7 @@ public class ManageEmployeePage extends JFrame implements ActionListener {
             catch(Exception exp){
                 EmployeeInfoPanel.setVisible(false);
                 BtnPanel.setVisible(false);
+                Sys.employee = null;
                 JOptionPane.showMessageDialog(null,"Only numbers are allowed in ID!!", "Error",JOptionPane.ERROR_MESSAGE);
                 return;
             }
@@ -71,6 +80,7 @@ public class ManageEmployeePage extends JFrame implements ActionListener {
             if(index == -1){
                 EmployeeInfoPanel.setVisible(false);
                 BtnPanel.setVisible(false);
+                Sys.employee = null;
                 JOptionPane.showMessageDialog(null,"ID doesn't exist!", "Error",JOptionPane.ERROR_MESSAGE);
                 return;
             }
@@ -89,6 +99,10 @@ public class ManageEmployeePage extends JFrame implements ActionListener {
             dispose();
         }
         else if(e.getSource() == GetPayrollBtn){
+            if(Sys.employee.getSalary() == null){
+               JOptionPane.showMessageDialog(null,"Employee doesn't have a payroll yet!","Info",JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
             new GetPayrollPage();
             dispose();
         }
@@ -97,6 +111,10 @@ public class ManageEmployeePage extends JFrame implements ActionListener {
             dispose();
         }
         else if(e.getSource() == GetEvaluationBtn){
+            if(Sys.employee.getPerformanceEvaluation() == null){
+                JOptionPane.showMessageDialog(null,"Employee doesn't have a Performance evaluation yet!","Info",JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
             new GetEvaluationPage();
             dispose();
         }
@@ -108,10 +126,12 @@ public class ManageEmployeePage extends JFrame implements ActionListener {
                 EmployeeInfoPanel.setVisible(false);
                 BtnPanel.setVisible(false);
                 Sys.hrms.removeEmployee(index);
+                Sys.employee = null;
             }
         }
         else{
             new EmployeeServicesPage();
+            Sys.employee = null;
             dispose();
         }
 

@@ -52,7 +52,10 @@ public class AddEmployeePage extends JFrame implements ActionListener{
                 Employee employee = new Employee(name,id,username,password,department);
                 boolean added = Sys.hrms.addEmployee(employee);
                 if(!added){
-                    JOptionPane.showMessageDialog(null,"Id already exists!", "Error",JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"ID already exists!", "Error",JOptionPane.ERROR_MESSAGE);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,"Employee added successfully!", "Error",JOptionPane.INFORMATION_MESSAGE);
                 }
             }
             catch(Exception ex){

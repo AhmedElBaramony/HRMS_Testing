@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="SetEvaluationPage">
+  <grid id="27dc6" binding="SetEvaluationPage" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties>
+      <background color="-1"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="d9cad" binding="TitlePanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="3c7ad" class="javax.swing.JLabel" binding="SetEvaluationTitle">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1"/>
+              <enabled value="true"/>
+              <font size="32" style="1"/>
+              <foreground color="-16777216"/>
+              <text value="Set Evaluation"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="fae96" binding="EvaluationInputPanel" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="e84b4" class="javax.swing.JLabel" binding="QualityLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="214" height="25"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-16777216"/>
+              <enabled value="true"/>
+              <font size="18" style="1"/>
+              <foreground color="-16777216"/>
+              <text value="Quality:"/>
+            </properties>
+          </component>
+          <component id="59708" class="javax.swing.JLabel" binding="ProductivityLabel">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="208" height="25"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-16777216"/>
+              <enabled value="true"/>
+              <font size="18" style="1"/>
+              <foreground color="-16777216"/>
+              <text value="Productivity:"/>
+            </properties>
+          </component>
+          <component id="c0d65" class="javax.swing.JLabel" binding="PunctualityLabel">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="208" height="25"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-16777216"/>
+              <enabled value="true"/>
+              <font size="18" style="1"/>
+              <foreground color="-16777216"/>
+              <text value="Punctuality:"/>
+            </properties>
+          </component>
+          <component id="3a488" class="javax.swing.JLabel" binding="CollaborationLabel">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="208" height="25"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-16777216"/>
+              <enabled value="true"/>
+              <font size="18" style="1"/>
+              <foreground color="-16777216"/>
+              <text value="Collaboration:"/>
+            </properties>
+          </component>
+          <component id="4062d" class="javax.swing.JComboBox" binding="QualityDrop">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1"/>
+            </properties>
+          </component>
+          <component id="3eb68" class="javax.swing.JComboBox" binding="ProductivityDrop">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1"/>
+            </properties>
+          </component>
+          <component id="50c27" class="javax.swing.JComboBox" binding="PunctualityDrop">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1"/>
+            </properties>
+          </component>
+          <component id="810b6" class="javax.swing.JComboBox" binding="CollaborationDrop">
+            <constraints>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1"/>
+            </properties>
+          </component>
+          <component id="7d1ce" class="javax.swing.JLabel" binding="InitiativeLabel">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="208" height="25"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-16777216"/>
+              <enabled value="true"/>
+              <font size="18" style="1"/>
+              <foreground color="-16777216"/>
+              <text value="Initiative:"/>
+            </properties>
+          </component>
+          <component id="5742b" class="javax.swing.JComboBox" binding="InitiativeDrop">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="239bb" binding="BtnPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="4ae37" class="javax.swing.JButton" binding="SubmitBtn">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+              <font name="Fira Code" size="18" style="1"/>
+              <foreground color="-1"/>
+              <text value="Submit"/>
+            </properties>
+          </component>
+          <component id="cbfd5" class="javax.swing.JButton" binding="BackBtn">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+              <font name="Fira Code" size="18" style="1"/>
+              <foreground color="-1"/>
+              <text value="Back"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

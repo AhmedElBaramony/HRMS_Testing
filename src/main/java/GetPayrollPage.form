@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="EmployeePage">
-  <grid id="27dc6" binding="EmployeePage" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="GetPayrollPage">
+  <grid id="27dc6" binding="GetPayrollPage" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
@@ -10,7 +10,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="2025" binding="TitlePanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="def1e" binding="TitlePanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -20,7 +20,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="3657c" class="javax.swing.JLabel" binding="EmployeeLandLabel">
+          <component id="63e42" class="javax.swing.JLabel" binding="GetPayrollTitle">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -29,12 +29,12 @@
               <enabled value="true"/>
               <font size="32" style="1"/>
               <foreground color="-16777216"/>
-              <text value="Employee Page"/>
+              <text value="Get Payroll"/>
             </properties>
           </component>
         </children>
       </grid>
-      <grid id="72ae5" binding="EmployeeInfoPanel" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="98790" binding="PayrollInfoPanel" layout-manager="GridLayoutManager" row-count="4" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -44,10 +44,10 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="39b07" class="javax.swing.JLabel" binding="NameLabel">
+          <component id="27df1" class="javax.swing.JLabel" binding="BaseSalaryLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="208" height="25"/>
+                <preferred-size width="214" height="25"/>
               </grid>
             </constraints>
             <properties>
@@ -55,10 +55,10 @@
               <enabled value="true"/>
               <font size="18" style="1"/>
               <foreground color="-16777216"/>
-              <text value="Name:"/>
+              <text value="Base Salary:"/>
             </properties>
           </component>
-          <component id="76a14" class="javax.swing.JLabel" binding="IDLabel">
+          <component id="667a3" class="javax.swing.JLabel" binding="BonusLabel">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="208" height="25"/>
@@ -69,34 +69,10 @@
               <enabled value="true"/>
               <font size="18" style="1"/>
               <foreground color="-16777216"/>
-              <text value="ID:"/>
+              <text value="Bonus:"/>
             </properties>
           </component>
-          <component id="550fc" class="javax.swing.JLabel" binding="EmployeeName">
-            <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-16777216"/>
-              <enabled value="true"/>
-              <font size="18" style="0"/>
-              <foreground color="-16777216"/>
-              <text value="Employee's Name"/>
-            </properties>
-          </component>
-          <component id="447fa" class="javax.swing.JLabel" binding="EmployeeID">
-            <constraints>
-              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-16777216"/>
-              <enabled value="true"/>
-              <font size="18" style="0"/>
-              <foreground color="-16777216"/>
-              <text value="Employee's ID"/>
-            </properties>
-          </component>
-          <component id="6a370" class="javax.swing.JLabel" binding="DepartmentLabel">
+          <component id="1422" class="javax.swing.JLabel" binding="TaxLabel">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="208" height="25"/>
@@ -107,10 +83,48 @@
               <enabled value="true"/>
               <font size="18" style="1"/>
               <foreground color="-16777216"/>
-              <text value="Department:"/>
+              <text value="Tax:"/>
             </properties>
           </component>
-          <component id="5d46" class="javax.swing.JLabel" binding="EmployeeDepartment">
+          <component id="5e8b7" class="javax.swing.JLabel" binding="DeductionLabel">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="208" height="25"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-16777216"/>
+              <enabled value="true"/>
+              <font size="18" style="1"/>
+              <foreground color="-16777216"/>
+              <text value="Deduction:"/>
+            </properties>
+          </component>
+          <component id="bcead" class="javax.swing.JLabel" binding="BaseSalaryText">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-16777216"/>
+              <enabled value="true"/>
+              <font size="18" style="0"/>
+              <foreground color="-16777216"/>
+              <text value="Base Salary"/>
+            </properties>
+          </component>
+          <component id="5886f" class="javax.swing.JLabel" binding="BonusText">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-16777216"/>
+              <enabled value="true"/>
+              <font size="18" style="0"/>
+              <foreground color="-16777216"/>
+              <text value="Bonus"/>
+            </properties>
+          </component>
+          <component id="c2db8" class="javax.swing.JLabel" binding="TaxText">
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -119,45 +133,34 @@
               <enabled value="true"/>
               <font size="18" style="0"/>
               <foreground color="-16777216"/>
-              <text value="Employee's Department"/>
+              <text value="Tax"/>
+            </properties>
+          </component>
+          <component id="a8a67" class="javax.swing.JLabel" binding="DeductionText">
+            <constraints>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-16777216"/>
+              <enabled value="true"/>
+              <font size="18" style="0"/>
+              <foreground color="-16777216"/>
+              <text value="Deduction"/>
             </properties>
           </component>
         </children>
       </grid>
-      <grid id="39a4c" binding="BtnPanel" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="80c75" binding="BtnPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-1"/>
-          <font name="Fira Code" style="1"/>
         </properties>
         <border type="none"/>
         <children>
-          <component id="4db5b" class="javax.swing.JButton" binding="RequestLeaveBtn">
-            <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <enabled value="true"/>
-              <font name="Fira Code" size="18" style="1"/>
-              <foreground color="-1"/>
-              <text value="Request to Leave"/>
-            </properties>
-          </component>
-          <component id="f2edc" class="javax.swing.JButton" binding="PerformaceEvalBtn">
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <enabled value="true"/>
-              <font name="Fira Code" size="18" style="1"/>
-              <foreground color="-1"/>
-              <text value="Performace Evaluation"/>
-            </properties>
-          </component>
-          <component id="d0b39" class="javax.swing.JButton" binding="PayrollBtn">
+          <component id="c137f" class="javax.swing.JButton" binding="BackBtn">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -165,20 +168,7 @@
               <enabled value="true"/>
               <font name="Fira Code" size="18" style="1"/>
               <foreground color="-1"/>
-              <text value="Payroll"/>
-            </properties>
-          </component>
-          <component id="8cce0" class="javax.swing.JButton" binding="LoginPageBtn">
-            <constraints>
-              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-11775918"/>
-              <enabled value="true"/>
-              <font name="Fira Code" size="18" style="1"/>
-              <foreground color="-1"/>
-              <hideActionText value="false"/>
-              <text value="Return To Login Page"/>
+              <text value="Back"/>
             </properties>
           </component>
         </children>

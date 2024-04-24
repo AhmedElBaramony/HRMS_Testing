@@ -27,6 +27,10 @@ public class LeaveManagement {
         return index;
     }
 
+    public int getSize(){
+        return leaveRequests.size();
+    }
+
     public void acceptLeaveRequest(int index){
         leaveRequests.get(index).setStatus(LeaveStatus.ACCEPTED);
     }

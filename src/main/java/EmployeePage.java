@@ -47,16 +47,28 @@ public class EmployeePage extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == PayrollBtn){
-
+            if(Sys.employee.getSalary() == null){
+                JOptionPane.showMessageDialog(null,"Employee doesn't have a payroll yet!","Info",JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
+            new EmployeeGetPayrollPage();
+            dispose();
         }
         else if(e.getSource() == PerformaceEvalBtn){
-
+            if(Sys.employee.getPerformanceEvaluation() == null){
+                JOptionPane.showMessageDialog(null,"Employee doesn't have a Performance evaluation yet!","Info",JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
+            new EmployeeGetEvaluationPage();
+            dispose();
         }
         else if(e.getSource() == RequestLeaveBtn){
-
+            new RequestLeavePage();
+            dispose();
         }
         else{
             new LoginPage();
+            dispose();
         }
     }
 }

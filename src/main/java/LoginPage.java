@@ -41,8 +41,7 @@ public class LoginPage extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == LoginBtn){
             String username = UsernameText.getText();
-            char[] passch = PasswordText.getPassword();
-            String password = new String(passch);
+            String password = new String(PasswordText.getPassword());
 
             status = Sys.hrms.authenticate(username,password);
 
@@ -53,6 +52,7 @@ public class LoginPage extends JFrame implements ActionListener{
             }
             else if(status == -1){
                 new AdminPage();
+                Sys.employee = null;
                 dispose();
             }
             else

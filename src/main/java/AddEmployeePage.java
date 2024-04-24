@@ -55,7 +55,7 @@ public class AddEmployeePage extends JFrame implements ActionListener{
                     JOptionPane.showMessageDialog(null,"ID already exists!", "Error",JOptionPane.ERROR_MESSAGE);
                 }
                 else{
-                    JOptionPane.showMessageDialog(null,"Employee added successfully!", "Error",JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Employee added successfully!", "Info",JOptionPane.INFORMATION_MESSAGE);
                 }
             }
             catch(Exception ex){

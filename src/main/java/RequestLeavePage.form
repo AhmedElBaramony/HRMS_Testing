@@ -81,6 +81,7 @@
             <properties>
               <background color="-1"/>
               <text value="Day"/>
+              <toolTipText value=""/>
               <visible value="true"/>
             </properties>
           </component>

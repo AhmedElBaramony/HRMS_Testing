@@ -66,6 +66,10 @@ public class HRMS{
         leaveManagement.rejectLeaveRequest(index);
     }
 
+    public int getLeaveRequestsCount(){
+        return leaveManagement.getSize();
+    }
+
     public int authenticate(String username, String password){
         int state = -2; //not an admin nor employee
 

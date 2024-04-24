@@ -21,6 +21,7 @@ public class EmployeePage extends JFrame implements ActionListener {
     private JButton PerformaceEvalBtn;
     private JButton PayrollBtn;
     private JButton LoginPageBtn;
+    private JButton ViewRequestsBtn;
 
 
     public EmployeePage(){
@@ -41,6 +42,7 @@ public class EmployeePage extends JFrame implements ActionListener {
         PayrollBtn.addActionListener(this);
         PerformaceEvalBtn.addActionListener(this);
         RequestLeaveBtn.addActionListener(this);
+        ViewRequestsBtn.addActionListener(this);
         LoginPageBtn.addActionListener(this);
     }
 
@@ -64,6 +66,10 @@ public class EmployeePage extends JFrame implements ActionListener {
         }
         else if(e.getSource() == RequestLeaveBtn){
             new RequestLeavePage();
+            dispose();
+        }
+        else if(e.getSource() == ViewRequestsBtn){
+            new ViewLeaveRequestsPage();
             dispose();
         }
         else{

@@ -57,7 +57,7 @@ public class LoginPage extends JFrame implements ActionListener{
             }
             else
             {
-                JOptionPane.showMessageDialog(LoginPage.this, "Etl3 bara");
+                JOptionPane.showMessageDialog(LoginPage.this, "Invalid Credentials!");
             }
         }
     }

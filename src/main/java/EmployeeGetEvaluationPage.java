@@ -20,6 +20,8 @@ public class EmployeeGetEvaluationPage extends JFrame{
     private JPanel BtnPanel;
     private JButton BackBtn;
     private JPanel EmployeeGetEvaluationPage;
+    private JLabel EvaluationLabel;
+    private JLabel EvaluationText;
 
     EmployeeGetEvaluationPage(){
         setContentPane(EmployeeGetEvaluationPage);
@@ -35,6 +37,7 @@ public class EmployeeGetEvaluationPage extends JFrame{
         PunctualityText.setText(pe.getPunctuality().toString());
         CollaborationText.setText(pe.getCollaboration().toString());
         InitiativeText.setText(pe.getInitiative().toString());
+        EvaluationText.setText(pe.getEvaluation().toString());
 
         BackBtn.addActionListener(e -> {
             new EmployeePage();

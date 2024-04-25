@@ -1,5 +1,6 @@
-package org.example;
+package org.example.JUnit5;
 
+import org.example.*;
 import org.junit.jupiter.api.*;
 
 import java.util.Date;

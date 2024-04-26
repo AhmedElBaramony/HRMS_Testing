@@ -51,14 +51,14 @@ public class RequestLeavePage extends JFrame implements ActionListener {
         if(e.getSource() == SubmitBtn){
             try{
                 int day = Integer.parseInt(SDayText.getText());
-                int month = Integer.parseInt(SDayText.getText());
-                int year = Integer.parseInt(SDayText.getText());
-                Date start = new Date(day, month, year);
+                int month = Integer.parseInt(SMonthText.getText());
+                int year = Integer.parseInt(SYearText.getText()) - 1900;
+                Date start = new Date(year, month, day);
 
                 day = Integer.parseInt(EDayText.getText());
-                month = Integer.parseInt(EDayText.getText());
-                year =Integer.parseInt(EDayText.getText());
-                Date end = new Date(day, month, year);
+                month = Integer.parseInt(EMonthText.getText());
+                year =Integer.parseInt(EYearText.getText()) - 1900;
+                Date end = new Date(year, month, day);
 
                 LeaveType leaveType = LeaveType.valueOf(TypeDrop.getSelectedItem().toString());
 

@@ -20,16 +20,12 @@ public class HRMS{
     }
 
     public boolean addEmployee(Employee employee){
-
-        if(searchEmployee(employee.getId()) == -1)
-        {
+        if(searchEmployee(employee.getId()) == -1) {
             employees.add(employee);
             return true;
         }
         else
-        {
             return false;
-        }
     }
 
     public int searchEmployee(int id){
@@ -81,7 +77,7 @@ public class HRMS{
         {
             for (int i=0;i<employees.size();i++)
             {
-                if (username.equals(employees.get(i).getUsername()) && password.equals(employees.get(i).getPassword())) {
+                if (username.equals(employees.get(i).getUsername()) && password.equals(employees.get(i).getPassword())){
                     state = i; //employee
                     break;
                 }

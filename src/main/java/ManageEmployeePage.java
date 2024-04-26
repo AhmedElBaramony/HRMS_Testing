@@ -119,7 +119,7 @@ public class ManageEmployeePage extends JFrame implements ActionListener {
             dispose();
         }
         else if(e.getSource() == FireEmployeeBtn){
-            int option = JOptionPane.showConfirmDialog(null,"ID doesn't exist!", "Error",JOptionPane.YES_NO_OPTION);
+            int option = JOptionPane.showConfirmDialog(null,"Are You Sure?!", "Error",JOptionPane.YES_NO_OPTION);
             if(option == 0){
                 int id = Sys.employee.getId();
                 int index = Sys.hrms.searchEmployee(id);
